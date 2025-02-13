@@ -2,9 +2,11 @@
 
 This is the code repo for paper [CREAM: Consistency Regularized Self-Rewarding Language Models](https://arxiv.org/pdf/2410.12735) accepted to ICLR 2025.
 
-CREAM extends the Self-Rewarding Language Model (SRLM) to smaller (e.g., 7B-level LLMs), and mitigates the potential rewarding bias and overconfident preference labeling issues through self-consistency regularization.
+CREAM extends the Self-Rewarding Language Model (SRLM) to small models (e.g., 7B-level LLMs), and mitigates the potential rewarding bias and overconfident preference labeling issues through self-consistency regularization.
 
-![overview](./figures/overview.jpg)
+<p align="center">
+    <img src="./figures/overview.jpg" width="85%"> <br>
+</p>
 
 **Method Overview**: CREAM will use the same LLM to serve as the policy model (which generates responses) and the reward model (which scores and ranks those generated responses). M1 model can be obtained by SFT training the initial model M0. Then, CREAM samples responses for the given question (prompt) set. Those generated responses will be judged and ranked by both current iteration's model M1 and last iteration's model M0, via DPO rewarding. Ranked responses would form the preference pair for DPO training. The differences between rankings (obtained by M1 and M0) serve as the consistency rate (Kendall’s Tau coefficient), which will be used for consistency-regularized training M1 into M2. These steps can be repeated to obtain M3, M4 and beyond. Please also refer to Algorithm 1 for details.
 
@@ -128,7 +130,6 @@ title={CREAM: Consistency Regularized Self-Rewarding Language Models},
 author={Zhaoyang Wang and Weilei He and Zhiyuan Liang and Xuchao Zhang and Chetan Bansal and Ying Wei and Weitong Zhang and Huaxiu Yao},
 booktitle={The Thirteenth International Conference on Learning Representations},
 year={2025},
-
 url={https://openreview.net/forum?id=Vf6RDObyEF}
 }
 ```
