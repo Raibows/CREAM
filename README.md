@@ -36,7 +36,7 @@ python train.py \
 --name oasst_sft
 ```
 
-The saved checkpoints will be in `outputs/sft` folder. You need to fill the selected checkpoint path in `configs/checkpoint.json`.
+The saved checkpoints will be in `outputs/sft` folder. You need to fill the selected checkpoint path in `configs/checkpoint.json`. Note that you can also use DeepSpeed to save GPU memory by adding `--deepspeed configs/ds_stage2.json`.
 
 ## Preference Data Curation - Response Sampling
 
