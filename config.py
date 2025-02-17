@@ -108,8 +108,8 @@ class CommonConfig(InitConfig):
     master_address: str = 'localhost'
     master_port: int | None = None
     bf16: bool = True
-    wandb_project_name: str = "SuperviseRewarding"
-    wandb_entity_name: str = "raibows"
+    wandb_project_name: str = "CREAM"
+    wandb_entity_name: str = "your_wandb_entity_name"
     run_name: str | None = None
     output_dir: str | None = None
     # Help: load the command line args from a json file, priority: command line > pass_in > loaded_override_config > default
